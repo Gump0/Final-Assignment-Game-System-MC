@@ -14,26 +14,36 @@ public class MissileBrain : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    // Start is called before the first frame update
+
+
+
+
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
 
-
+        //calculates the angle between where the missile is and where the destination is
         Vector2 targetPosition = destination.transform.position;
         Vector2 startPosition = transform.position;
         float angle = Mathf.Atan2(targetPosition.y - startPosition.y, targetPosition.x - startPosition.x);
 
+        //rotates the missile to the angle just calcualted
         transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * angle - 90);
-
-        //rb.velocity = Vector2.up * missileSpeed;
     }
 
-    // Update is called once per frame
+
+
+
+
     void FixedUpdate()
     {
+        //moves the missile in the direction that it's facing
         transform.Translate(Vector2.up * missileSpeed * Time.deltaTime); 
     }
+
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

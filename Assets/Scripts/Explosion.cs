@@ -11,43 +11,47 @@ public class Explosion : MonoBehaviour
     private bool expanding = true;
     private bool shrinking = false;
 
-    // Start is called before the first frame update
+
+
+
     void Start()
     {
+        //sets the scale to 0
         transform.localScale = Vector3.zero;
 
         size = 0;
     }
 
-    // Update is called once per frame
+
+
+
     void FixedUpdate()
     {
         transform.localScale = Vector3.one * size;
 
+        //increases the size of the explosion
         if (expanding)
         {
             size += expansionRate;
         }
         
+        //stops expanding and start shrinking
         if (size > 1)
         {
-            expanding= false;
-            Invoke("StartShrinking", pauseDurration);
+            expanding = false;
+            shrinking = true;
         }
         
+        //decrese the size of the explosion
         if (shrinking)
         {
             size -= expansionRate;
         }
         
+        //destroys itse;f when it's done shrinking
         if (size < 0)
         {
             Destroy(gameObject);
         }
-    }
-
-    void StartShrinking()
-    {
-        shrinking= true;
     }
 }

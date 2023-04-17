@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6689509413003592964}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57e7eb10e0c7c9a59ab174fb1cae001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turrets: []
+  distanceToMouse: 0

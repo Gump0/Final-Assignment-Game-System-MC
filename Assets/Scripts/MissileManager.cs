@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class MissileManager : MonoBehaviour
 {
-    public GameObject friendlyMissile, enemyMissile, turret1, turret2, turret3, city1, city2, city3, city4, city5, city6;
+    public GameObject friendlyMissile, turret1, turret2, turret3;
 
     private Vector2 turret1Pos, turret2Pos, turret3Pos, mainTurret;
 
     private float turret1Distance, turret2Distance, turret3Distance, lowestIndex, lowestValue;
 
     private float[] distanceValues = new float[3];
-    private Vector2[] enemyDestinations = new Vector2[9];
-
-    public Vector2 currentEnemyMissileTarget;
 
 
     // Start is called before the first frame update
@@ -26,16 +23,6 @@ public class MissileManager : MonoBehaviour
         turret3Pos = turret3.transform.position;
 
         lowestIndex = -1;
-
-        enemyDestinations[0] = turret1.transform.position;
-        enemyDestinations[1] = turret2.transform.position;
-        enemyDestinations[2] = turret3.transform.position;
-        enemyDestinations[3] = city1.transform.position;
-        enemyDestinations[4] = city2.transform.position;
-        enemyDestinations[5] = city3.transform.position;
-        enemyDestinations[6] = city4.transform.position;
-        enemyDestinations[7] = city5.transform.position;
-        enemyDestinations[8] = city6.transform.position;
 
     }
 

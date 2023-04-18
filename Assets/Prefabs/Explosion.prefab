@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4944308651329073720}
   m_Layer: 0
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,5 +114,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2d6521c988c5641bf285d5d70143d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expansionRate: 0.01
-  pauseDurration: 0
+  expansionRate: 0.02
+  maxSize: 1.5

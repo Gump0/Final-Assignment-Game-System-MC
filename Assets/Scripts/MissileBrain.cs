@@ -51,16 +51,33 @@ public class MissileBrain : MonoBehaviour
         {
             Explode();
         }
+
+        if (collision.gameObject.CompareTag("Explosion"))
+        {
+            if (gameObject.tag == ("Enemy Missile"))
+            {
+                Explode();
+            }
+        }
     }
+
+    
 
 
 
 
     private void Explode()
     {
-        Instantiate(explosion, destination.transform.position, Quaternion.identity);
+        if (gameObject.tag == ("Enemy Missile"))
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(explosion, destination.transform.position, Quaternion.identity);
+        }
 
         Destroy(destination);
         Destroy(gameObject);
-    }
+    }   
 }

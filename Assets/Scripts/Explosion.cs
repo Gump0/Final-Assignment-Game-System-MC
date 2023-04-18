@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float expansionRate, pauseDurration;
+    public float expansionRate, maxSize;
 
     float size;
 
@@ -36,7 +36,7 @@ public class Explosion : MonoBehaviour
         }
         
         //stops expanding and start shrinking
-        if (size > 1)
+        if (size > maxSize)
         {
             expanding = false;
             shrinking = true;

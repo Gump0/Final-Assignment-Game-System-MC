@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class MissileManager : MonoBehaviour
 {
-    public GameObject friendlyMissile, turret1, turret2, turret3;
+    public GameObject friendlyMissile, enemyMissiles, turret1, turret2, turret3, city1, city2, city3, city4, city5, city6, enemySpawnCorner1, enemySpawnCorner2;
 
     private Vector2 turret1Pos, turret2Pos, turret3Pos, mainTurret;
 
-    private float turret1Distance, turret2Distance, turret3Distance, lowestIndex, lowestValue;
+    private float turret1Distance, turret2Distance, turret3Distance, lowestIndex, lowestValue, enemyMissileAmmount;
+
+    [HideInInspector] public Vector2 currentEnemyMissileDestination;
 
     private float[] distanceValues = new float[3];
+    private Vector2[] buildingLocations = new Vector2[9];
 
 
     // Start is called before the first frame update
@@ -24,12 +27,33 @@ public class MissileManager : MonoBehaviour
 
         lowestIndex = -1;
 
+        //adds all the locations of the buildings to the array
+        buildingLocations[0] = turret1.transform.position;
+        buildingLocations[1] = turret2.transform.position;
+        buildingLocations[2] = turret3.transform.position;
+        buildingLocations[3] = city1.transform.position;
+        buildingLocations[4] = city2.transform.position;
+        buildingLocations[5] = city3.transform.position;
+        buildingLocations[6] = city4.transform.position;
+        buildingLocations[7] = city5.transform.position;
+        buildingLocations[8] = city6.transform.position;
+
+        enemyMissileAmmount = 12;
     }
 
     // Update is called once per frame
     void Update()
     {
         ChooseMainTurret();
+
+        ChooseEnemyMissileDestination();
+
+        if (enemyMissileAmmount >= 0)
+        {
+            SpawnEnemyMissile();
+            enemyMissileAmmount-= 1;
+        }
+
 
         //instantiates a friendly missile when the mouse is clicked
         if (Input.GetMouseButtonDown(0))
@@ -81,5 +105,24 @@ public class MissileManager : MonoBehaviour
             mainTurret = turret3Pos;
         }
 
+    }
+
+
+
+
+    private void ChooseEnemyMissileDestination()
+    {
+        float randomBuilding = UnityEngine.Random.Range(0, buildingLocations.Length);
+        
+        currentEnemyMissileDestination = buildingLocations[Mathf.FloorToInt(randomBuilding)];
+    }
+
+
+
+
+
+    private void SpawnEnemyMissile()
+    {
+        Instantiate(enemyMissiles, new Vector2(UnityEngine.Random.Range(enemySpawnCorner1.transform.position.x, enemySpawnCorner2.transform.position.x), UnityEngine.Random.Range(enemySpawnCorner1.transform.position.y, enemySpawnCorner2.transform.position.y)), Quaternion.identity);
     }
 }

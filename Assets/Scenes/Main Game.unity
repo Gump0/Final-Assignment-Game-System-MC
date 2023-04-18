@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 62890255}
   - component: {fileID: 62890256}
   m_Layer: 0
-  m_Name: Fstructure (1)
-  m_TagString: Untagged
+  m_Name: City
+  m_TagString: ' City'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,8 +223,8 @@ GameObject:
   - component: {fileID: 113854231}
   - component: {fileID: 113854232}
   m_Layer: 0
-  m_Name: Fstructure (5)
-  m_TagString: Untagged
+  m_Name: City
+  m_TagString: ' City'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,8 +391,8 @@ GameObject:
   - component: {fileID: 525245633}
   - component: {fileID: 525245634}
   m_Layer: 0
-  m_Name: Fstructure
-  m_TagString: Untagged
+  m_Name: City
+  m_TagString: ' City'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689509413003592967, guid: e9e5de93ee6b7faee84ab454bb089c9c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6689509413003592967, guid: e9e5de93ee6b7faee84ab454bb089c9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689509413003592967, guid: e9e5de93ee6b7faee84ab454bb089c9c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6689509413003592967, guid: e9e5de93ee6b7faee84ab454bb089c9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -843,7 +843,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333964319
 GameObject:
@@ -856,8 +856,8 @@ GameObject:
   - component: {fileID: 1333964320}
   - component: {fileID: 1333964321}
   m_Layer: 0
-  m_Name: Fstructure (2)
-  m_TagString: Untagged
+  m_Name: City
+  m_TagString: ' City'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1145,8 +1145,8 @@ GameObject:
   - component: {fileID: 1823344762}
   - component: {fileID: 1823344763}
   m_Layer: 0
-  m_Name: Fstructure (4)
-  m_TagString: Untagged
+  m_Name: City
+  m_TagString: ' City'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1274,7 +1274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1943079191
 PrefabInstance:
@@ -1344,8 +1344,8 @@ GameObject:
   - component: {fileID: 2025327125}
   - component: {fileID: 2025327126}
   m_Layer: 0
-  m_Name: Fstructure (3)
-  m_TagString: Untagged
+  m_Name: City
+  m_TagString: ' City'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

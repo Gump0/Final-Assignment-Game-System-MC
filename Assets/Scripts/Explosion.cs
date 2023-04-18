@@ -12,7 +12,7 @@ public class Explosion : MonoBehaviour
     private bool shrinking = false;
 
 
-
+	public GameObject city;
 
     void Start()
     {
@@ -54,4 +54,10 @@ public class Explosion : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.gameObject == city)
+		Debug.Log("COLLIDE WITH BUILDING");
+	}
 }

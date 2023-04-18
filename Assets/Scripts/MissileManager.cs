@@ -15,7 +15,9 @@ public class MissileManager : MonoBehaviour
 
     private float[] distanceValues = new float[3];
     private Vector2[] buildingLocations = new Vector2[9];
-
+    //ammo stuff
+    private float maxAmmo = 15;
+    public float currentAmmo;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class MissileManager : MonoBehaviour
         buildingLocations[8] = city6.transform.position;
 
         enemyMissileAmmount = 12;
+        //resets ammo capacity for turrets
+        currentAmmo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -56,12 +60,17 @@ public class MissileManager : MonoBehaviour
 
 
         //instantiates a friendly missile when the mouse is clicked
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
         {
             Instantiate(friendlyMissile, mainTurret, Quaternion.identity);
+            currentAmmo -= 1;
         }
     }
-
+	
+	private void Ammunition()
+	{
+		
+	}
 
     private void ChooseMainTurret()
     {

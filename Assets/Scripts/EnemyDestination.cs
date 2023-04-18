@@ -11,6 +11,8 @@ public class EnemyDestination : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        transform.parent = null;
+
         missileManager = GameObject.Find("Missile Manager");
         missileManagerscript = missileManager.GetComponent<MissileManager>();
 

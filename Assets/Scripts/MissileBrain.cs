@@ -56,7 +56,7 @@ public class MissileBrain : MonoBehaviour
         {
             if (gameObject.tag == ("Enemy Missile"))
             {
-                Explode();
+                EnemyExplode();
             }
         }
     }
@@ -68,16 +68,17 @@ public class MissileBrain : MonoBehaviour
 
     private void Explode()
     {
-        if (gameObject.tag == ("Enemy Missile"))
-        {
-            Instantiate(explosion, transform.position, Quaternion.identity);
-        }
-        else
-        {
             Instantiate(explosion, destination.transform.position, Quaternion.identity);
-        }
 
         Destroy(destination);
         Destroy(gameObject);
     }   
+
+    private void EnemyExplode()
+    {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+
+        Destroy(destination);
+        Destroy(gameObject);
+    }
 }

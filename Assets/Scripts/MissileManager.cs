@@ -18,6 +18,9 @@ public class MissileManager : MonoBehaviour
     //ammo stuff
     private float maxAmmo = 15;
     public float currentAmmo;
+    private float t1CAmmo;
+    private float t2CAmmo;
+    private float t3CAmmo;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,9 @@ public class MissileManager : MonoBehaviour
         enemyMissileAmmount = 12;
         //resets ammo capacity for turrets
         currentAmmo = maxAmmo;
+		t1CAmmo = maxAmmo;
+		t2CAmmo = maxAmmo;
+		t3CAmmo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -57,21 +63,8 @@ public class MissileManager : MonoBehaviour
             SpawnEnemyMissile();
             enemyMissileAmmount-= 1;
         }
-
-
-        //instantiates a friendly missile when the mouse is clicked
-        if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
-        {
-            Instantiate(friendlyMissile, mainTurret, Quaternion.identity);
-            currentAmmo -= 1;
-        }
     }
 	
-	private void Ammunition()
-	{
-		
-	}
-
     private void ChooseMainTurret()
     {
         //sets mousePos to the position of the mouse
@@ -104,20 +97,37 @@ public class MissileManager : MonoBehaviour
         if(lowestIndex == 0)
         {
             mainTurret = turret1Pos;
+            if(Input.GetMouseButtonDown(0) && t1CAmmo > 0)
+            {
+				Instantiate(friendlyMissile, mainTurret, Quaternion.identity);
+				t1CAmmo -= 1;
+			}    
         }
         else if (lowestIndex == 1)
         {
             mainTurret = turret2Pos;
+            if(Input.GetMouseButtonDown(0) && t2CAmmo > 0)
+            {
+				Instantiate(friendlyMissile, mainTurret, Quaternion.identity);
+				t2CAmmo -= 1;
+			}    
         }
         else if (lowestIndex == 2)
         {
             mainTurret = turret3Pos;
+            if(Input.GetMouseButtonDown(0) && t3CAmmo > 0)
+            {
+				Instantiate(friendlyMissile, mainTurret, Quaternion.identity);
+				t3CAmmo -= 1;
+			}    
         }
 
     }
 
-
-
+	private void Ammunition()
+	{
+		
+	}
 
     private void ChooseEnemyMissileDestination()
     {

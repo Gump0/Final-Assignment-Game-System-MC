@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MissileManager : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class MissileManager : MonoBehaviour
     private float t1CAmmo;
     private float t2CAmmo;
     private float t3CAmmo;
+    //ammo text stuff
+    [SerializeField]
+    TextMeshProUGUI ammoOne;
+    [SerializeField]
+    TextMeshProUGUI ammoTwo;
+    [SerializeField]
+    TextMeshProUGUI ammoThree;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +57,11 @@ public class MissileManager : MonoBehaviour
 		t1CAmmo = maxAmmo;
 		t2CAmmo = maxAmmo;
 		t3CAmmo = maxAmmo;
+		
+		//initialize text
+		ammoOne = GetComponent<TextMeshProUGUI>();
+		ammoTwo = GetComponent<TextMeshProUGUI>();
+		ammoThree = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -62,6 +75,11 @@ public class MissileManager : MonoBehaviour
         {
             SpawnEnemyMissile();
             enemyMissileAmmount-= 1;
+            
+        //update UI ammo text
+        ammoOne.text = t1CAmmo.ToString();
+        ammoTwo.text = t2CAmmo.ToString();
+        ammoThree.text = t3CAmmo.ToString();
         }
     }
 	
